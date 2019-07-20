@@ -1,12 +1,9 @@
 namespace MVCClub.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using MVCClub.Models;
+    using ClubDomain.Classes.ClubModels;
     using System;
-    using System.Data.Entity;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MVCClub.Models.ApplicationDbContext>
     {
@@ -17,62 +14,51 @@ namespace MVCClub.Migrations
 
         protected override void Seed(MVCClub.Models.ApplicationDbContext context)
         {
+            context.Clubs.AddOrUpdate(new Club[]
+            {
+                new Club{ ClubId = 1, ClubName = "UFC", adminID = 100,CreationDate = DateTime.Parse( "19-2-1983"), clubMembers =
+                new List<Member>()
+                {
+                    new Member
+                    {
+                        MemberID = 1, AssociatedClub = 1, StudentID = "S00083446", approved = true
+                    },
+                     new Member
+                    {
+                        MemberID = 2, AssociatedClub = 2, StudentID = "S007", approved = false
+                    }
+
+                },
+             clubEvents = new List<ClubEvent>()
+                {
+                      new ClubEvent
+                    {
+                        EventID = 1, Venue = "MGM Grand", Location = "Las Vegas" , ClubId = 1, StartDateTime = DateTime.Parse("12/11/1984"), EndDateTime = DateTime.Parse("13/12/1984")
+                    },
+                        new ClubEvent
+                    {
+                        EventID = 2, Venue = "3 Arena", Location = "Dublin" , ClubId = 1, StartDateTime = DateTime.Parse("2/1/1994"), EndDateTime = DateTime.Parse("19/3/1999")
+                    }
+                }
+                }
+            }
+                                //,
+            //    },
+            //    new Club
+            //    {
+
+            //    },
+            //    new Club
+            //    {
+
+            //    }
+            //}
+                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            var manager =
-                new UserManager<ApplicationUser>(
-                    new UserStore<ApplicationUser>(context));
 
-            var roleManager =
-                new RoleManager<IdentityRole>(
-                    new RoleStore<IdentityRole>(context));
-
-            context.Roles.AddOrUpdate(r => r.Name,
-                new IdentityRole { Name = "Admin" }
-                );
-            context.Roles.AddOrUpdate(r => r.Name,
-                new IdentityRole { Name = "ClubAdmin" }
-                );
-            context.Roles.AddOrUpdate(r => r.Name,
-                new IdentityRole { Name = "member" }
-                );
-
-            PasswordHasher ps = new PasswordHasher();
-
-            context.Users.AddOrUpdate(u => u.UserName,
-                new ApplicationUser
-                {
-                    UserName = "Admin",
-                    Email = "powell.paul@itsligo.ie",
-                    EmailConfirmed = true,
-                    JoinDate = DateTime.Now,
-                    SecurityStamp = Guid.NewGuid().ToString(),
-                    FirstName = "Paul",
-                    Surname = "Powell",
-                    PasswordHash = ps.HashPassword("Ppowell$1")
-                });
-
-            context.Users.AddOrUpdate(u => u.UserName,
-                new ApplicationUser
-                {
-                    UserName = "ITS FC Admin",
-                    Email = "radp2016@outlook.com",
-                    EmailConfirmed = true,
-                    JoinDate = DateTime.Now,
-                    SecurityStamp = Guid.NewGuid().ToString(),
-                    FirstName = "Rad",
-                    Surname = "Paulner",
-                    PasswordHash = ps.HashPassword("radP2016$1")
-                });
-            context.SaveChanges();
-
-            ApplicationUser admin = manager.FindByEmail("powell.paul@itsligo.ie");
-            if (admin != null)
-            {
-                manager.AddToRoles(admin.Id, new string[] { "Admin", "member", "ClubAdmin" });
-            }
 
         }
     }

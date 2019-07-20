@@ -180,6 +180,14 @@
     <Compile Include="Migrations\201907200701083_Application user fields added.Designer.cs">
       <DependentUpon>201907200701083_Application user fields added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907200712438_Club Model added.cs" />
+    <Compile Include="Migrations\201907200712438_Club Model added.Designer.cs">
+      <DependentUpon>201907200712438_Club Model added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907201253023_One club with 2 members and 2 events.cs" />
+    <Compile Include="Migrations\201907201253023_One club with 2 members and 2 events.Designer.cs">
+      <DependentUpon>201907201253023_One club with 2 members and 2 events.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -308,6 +316,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907200701083_Application user fields added.resx">
       <DependentUpon>201907200701083_Application user fields added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907200712438_Club Model added.resx">
+      <DependentUpon>201907200712438_Club Model added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907201253023_One club with 2 members and 2 events.resx">
+      <DependentUpon>201907201253023_One club with 2 members and 2 events.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

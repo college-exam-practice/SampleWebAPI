@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using ClubDomain.Classes.ClubModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -26,6 +27,11 @@ namespace MVCClub.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Club> Clubs { get; set; }
+        public DbSet<ClubEvent> ClubEvents { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<EventAttendnace> EventAttendances { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
