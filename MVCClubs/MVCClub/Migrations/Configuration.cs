@@ -13,36 +13,37 @@ namespace MVCClub.Migrations
         }
 
         protected override void Seed(MVCClub.Models.ApplicationDbContext context)
-        {
-            context.Clubs.AddOrUpdate(new Club[]
-            {
-                new Club{ ClubId = 1, ClubName = "UFC", adminID = 100,CreationDate = DateTime.Parse( "19-2-1983"), clubMembers =
-                new List<Member>()
-                {
-                    new Member
-                    {
-                        MemberID = 1, AssociatedClub = 1, StudentID = "S00083446", approved = true
-                    },
-                     new Member
-                    {
-                        MemberID = 2, AssociatedClub = 2, StudentID = "S007", approved = false
-                    }
+        { {
+                //context.Members.AddOrUpdate(new Member() {
 
-                },
-             clubEvents = new List<ClubEvent>()
-                {
-                      new ClubEvent
-                    {
-                        EventID = 1, Venue = "MGM Grand", Location = "Las Vegas" , ClubId = 1, StartDateTime = DateTime.Parse("12/11/1984"), EndDateTime = DateTime.Parse("13/12/1984")
-                    },
-                        new ClubEvent
-                    {
-                        EventID = 2, Venue = "3 Arena", Location = "Dublin" , ClubId = 1, StartDateTime = DateTime.Parse("2/1/1994"), EndDateTime = DateTime.Parse("19/3/1999")
-                    }
-                }
-                }
-            }
-                                //,
+                //    StudentID = "S00083446", approved = true, MemberID = 1, AssociatedClub = 1, myClub = new Club{ ClubName = "Bellator", ClubId = 2, adminID = 100 }
+                //});
+
+        }
+            
+
+
+            //},
+            // new Member
+            //{
+            //    MemberID = 2, AssociatedClub = 3, StudentID = "Yin Yang", approved = false
+            //}
+
+            //   },
+            //clubEvents = new List<ClubEvent>()
+            //   {
+            //         new ClubEvent
+            //       {
+            //           EventID = 1, Venue = "Pjonyang", Location = "Vienam" , ClubId = 3, StartDateTime = DateTime.Parse("1/11/1983"), EndDateTime = DateTime.Parse("3/12/1984")
+            //       },
+            //           new ClubEvent
+            //       {
+            //           EventID = 2, Venue = "Bangkok", Location = "Thailand" , ClubId = 3, StartDateTime = DateTime.Parse("2/1/2000"), EndDateTime = DateTime.Parse("19/3/2001")
+            //       }
+            //   }
+            //   }
+            //}
+            //,
             //    },
             //    new Club
             //    {
@@ -53,7 +54,6 @@ namespace MVCClub.Migrations
 
             //    }
             //}
-                );
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 

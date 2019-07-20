@@ -167,8 +167,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClubEventsController.cs" />
+    <Compile Include="Controllers\ClubsController.cs" />
+    <Compile Include="Controllers\EventAttendnacesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,6 +191,18 @@
     <Compile Include="Migrations\201907201253023_One club with 2 members and 2 events.cs" />
     <Compile Include="Migrations\201907201253023_One club with 2 members and 2 events.Designer.cs">
       <DependentUpon>201907201253023_One club with 2 members and 2 events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907201259255_Second club seeded.cs" />
+    <Compile Include="Migrations\201907201259255_Second club seeded.Designer.cs">
+      <DependentUpon>201907201259255_Second club seeded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907201303446_2 more clubs seeded.cs" />
+    <Compile Include="Migrations\201907201303446_2 more clubs seeded.Designer.cs">
+      <DependentUpon>201907201303446_2 more clubs seeded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907201356488_Added second member to club.cs" />
+    <Compile Include="Migrations\201907201356488_Added second member to club.Designer.cs">
+      <DependentUpon>201907201356488_Added second member to club.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -291,6 +307,26 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Clubs\Create.cshtml" />
+    <Content Include="Views\Clubs\Delete.cshtml" />
+    <Content Include="Views\Clubs\Details.cshtml" />
+    <Content Include="Views\Clubs\Edit.cshtml" />
+    <Content Include="Views\Clubs\Index.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\ClubEvents\Create.cshtml" />
+    <Content Include="Views\ClubEvents\Delete.cshtml" />
+    <Content Include="Views\ClubEvents\Details.cshtml" />
+    <Content Include="Views\ClubEvents\Edit.cshtml" />
+    <Content Include="Views\ClubEvents\Index.cshtml" />
+    <Content Include="Views\EventAttendnaces\Create.cshtml" />
+    <Content Include="Views\EventAttendnaces\Delete.cshtml" />
+    <Content Include="Views\EventAttendnaces\Details.cshtml" />
+    <Content Include="Views\EventAttendnaces\Edit.cshtml" />
+    <Content Include="Views\EventAttendnaces\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -322,6 +358,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907201253023_One club with 2 members and 2 events.resx">
       <DependentUpon>201907201253023_One club with 2 members and 2 events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907201259255_Second club seeded.resx">
+      <DependentUpon>201907201259255_Second club seeded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907201303446_2 more clubs seeded.resx">
+      <DependentUpon>201907201303446_2 more clubs seeded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907201356488_Added second member to club.resx">
+      <DependentUpon>201907201356488_Added second member to club.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
